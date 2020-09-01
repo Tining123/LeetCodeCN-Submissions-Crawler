@@ -115,7 +115,7 @@ def scraping(client):
                         else: # 如果题目是新的面试题
                             newpath = OUTPUT_DIR + "/" + Pid + "." + Title
                             filename = Pid + "-" + Title + file_format[Lang] #存放的文件名
-                        
+                        newpath = 'save'
                         if not os.path.exists(newpath):
                             os.mkdir(newpath)
                         
@@ -123,7 +123,7 @@ def scraping(client):
 
                         code = get_code(submission, client)
                         
-                        with open(totalpath, "w") as f: #开始写到本地
+                        with open('save/' + filename, "w") as f: #开始写到本地
                             f.write(code)
                             print ("Writing ends!", totalpath)
                             
